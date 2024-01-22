@@ -83,7 +83,7 @@ export const ChatInput = ({ apiUrl, query, name, type }: ChatInputProps) => {
                       onChange={(emoji: string) =>
                         field.onChange(`${field.value} ${emoji}`)
                       }
-                    />{' '}
+                    />
                   </div>
                 </div>
               </FormControl>
