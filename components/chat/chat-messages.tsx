@@ -7,6 +7,7 @@ import { ChatWelcome } from './chat-welcome';
 import { useChatQuery } from '@/hooks/use-chat-query';
 import { ChatItem } from './chat-item';
 import { format } from 'date-fns';
+import { useChatSocket } from '@/hooks/use-chat-socket';
 
 const DATE_FORMAT = 'd MMM yyyy, HH:mm';
 
@@ -54,6 +55,8 @@ export const ChatMessages = ({
       paramValue,
     });
 
+  useChatSocket({ queryKey, addKey, updateKey });
+
   if (status === 'pending') {
     return (
       <div className='flex flex-1 flex-col items-center justify-center'>
@@ -100,6 +103,7 @@ export const ChatMessages = ({
           </Fragment>
         ))}
       </div>
+      <div ref={bottomRef} />
     </div>
   );
 };
