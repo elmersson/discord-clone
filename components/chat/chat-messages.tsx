@@ -66,7 +66,7 @@ export const ChatMessages = ({
     count: data?.pages?.[0]?.items?.length ?? 0,
   });
 
-  if (status === 'pending') {
+  if (status === 'loading') {
     return (
       <div className='flex flex-1 flex-col items-center justify-center'>
         <Loader2 className='my-4 h-7 w-7 animate-spin text-zinc-500' />
